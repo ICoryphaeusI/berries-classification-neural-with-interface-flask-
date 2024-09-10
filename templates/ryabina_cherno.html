@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ predicted_class }}{% endblock %}
+
+{% block content %}
+    <h1>{{ predicted_class }}</h1>
+    <div class="plant-description">
+
+        <h3>Распространение в России</h3>
+        <p>Черноплодная рябина, или арония, произрастает в различных экосистемах России, включая леса, болота, сухие и каменистые почвы.</p>
+
+        <h3>Внешний вид растения и ягод</h3>
+        <p>Этот кустарник или дерево может достигать высоты до 1,5 м. Ягоды черноплодной рябины собираются осенью и обладают сладким, терпковатым вкусом.</p>
+
+        <h3>Состав и полезные свойства</h3>
+        <p>В составе ягод рябины содержатся калий, фосфор, кальций, магний, натрий, витамины C, B3, B2 и A. Эти элементы способствуют лечению и профилактике гипертонической болезни, атеросклероза, гастритов и повышенного холестерина. Пектиновые вещества помогают выводить тяжелые металлы и радиоактивные вещества из организма.</p>
+
+        <h3>Исследования и применение</h3>
+        <p>Последние исследования показывают, что употребление рябины улучшает функционирование печени, укрепляет иммунитет и стабилизирует работу эндокринной системы.</p>
+
+    </div>
+
+    <h2>{{ predicted_class }}</h2>
+    <div class="image-examples">
+        <img src="{{ url_for('static', filename='example_images/ryabina_cherno/1.jpg') }}" alt="Example 1">
+        <img src="{{ url_for('static', filename='example_images/ryabina_cherno/2.jpg') }}" alt="Example 2">
+        <img src="{{ url_for('static', filename='example_images/ryabina_cherno/3.jpg') }}" alt="Example 3">
+        <img src="{{ url_for('static', filename='example_images/ryabina_cherno/4.jpg') }}" alt="Example 4">
+        <img src="{{ url_for('static', filename='example_images/ryabina_cherno/5.jpg') }}" alt="Example 5">
+        <img src="{{ url_for('static', filename='example_images/ryabina_cherno/6.jpg') }}" alt="Example 6">
+{% endblock %}

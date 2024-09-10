@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ predicted_class }}{% endblock %}
+
+{% block content %}
+    <h1>{{ predicted_class }}</h1>
+    <div class="plant-description">
+
+        <h3>Дополнительные названия</h3>
+    <p>Фитолакка, также известная как красночернильное растение, представляет собой травянистый многолетник с разветвленным стеблем, высотой до 4 метров.</p>
+
+    <h3>Описание внешнего вида</h3>
+    <p>Листья фитолакки овальные и крупные. Белые небольшие цветки собираются в соцветие в виде кисточки. Из них затем появляются темно-фиолетовые ягоды диаметром до 8 мм.</p>
+
+    <h3>Токсичность и особенности сока</h3>
+    <p>Плоды фитолакки ядовиты, и даже контакт с их соком может вызвать аллергическую реакцию. При работе с растением рекомендуется использовать средства индивидуальной защиты.</p>
+
+    <h3>Бережное обращение</h3>
+    <p>Из-за токсичности фитолакки необходимо бережно обращаться с растением, избегая контакта с соком и ягодами. Это особенно важно при наличии детей и домашних животных.</p>
+
+    <h3>Декоративное применение</h3>
+    <p>Фитолакка также может использоваться в ландшафтном дизайне благодаря своему декоративному внешнему виду, однако необходимо проявлять осторожность при выборе места для посадки.</p>
+</div>
+
+    <h2>{{ predicted_class }}</h2>
+    <div class="image-examples">
+        <img src="{{ url_for('static', filename='example_images/fitolakka/1.jpg') }}" alt="Example 1">
+        <img src="{{ url_for('static', filename='example_images/fitolakka/2.jpg') }}" alt="Example 2">
+        <img src="{{ url_for('static', filename='example_images/fitolakka/3.jpg') }}" alt="Example 3">
+        <img src="{{ url_for('static', filename='example_images/fitolakka/4.jpg') }}" alt="Example 4">
+        <img src="{{ url_for('static', filename='example_images/fitolakka/5.jpg') }}" alt="Example 5">
+        <img src="{{ url_for('static', filename='example_images/fitolakka/6.jpg') }}" alt="Example 6">
+    </div>
+{% endblock %}

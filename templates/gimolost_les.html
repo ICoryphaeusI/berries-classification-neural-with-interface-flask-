@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ predicted_class }}{% endblock %}
+
+{% block content %}
+    <h1>{{ predicted_class }}</h1>
+    <div class="plant-description">
+    
+        <h3>Распространение</h3>
+        <p>Жимолость лесная встречается в лесных зонах России, Кавказа и других регионов. Обычно она произрастает в умеренных климатических условиях.</p>
+    
+        <h3>Описание</h3>
+        <p>Это кустарник семейства каприфоль. Листья обычно продолговатые, цветы — небольшие и белые. Ягоды красными красного цвета.</p>
+    
+        <h3>Ядовитость</h3>
+        <p>Важно отметить, что некоторые виды жимолости содержат ягоды, которые могут быть ядовитыми. Поэтому не рекомендуется употреблять ягоды без точной идентификации вида и съедобности его ягод.</p>
+    
+        <h3>Предостережение</h3>
+        <p>Будьте осторожны и избегайте употребления ягод, если не уверены в их съедобности. При необходимости проконсультируйтесь с опытным специалистом по растениям.</p>
+    
+    </div>
+
+    <h2>{{ predicted_class }}</h2>
+    <div class="image-examples">
+        <img src="{{ url_for('static', filename='example_images/gimolost_les/1.jpeg') }}" alt="Example 1">
+        <img src="{{ url_for('static', filename='example_images/gimolost_les/2.jpg') }}" alt="Example 2">
+        <img src="{{ url_for('static', filename='example_images/gimolost_les/3.jpg') }}" alt="Example 3">
+        <img src="{{ url_for('static', filename='example_images/gimolost_les/4.jpg') }}" alt="Example 4">
+        <img src="{{ url_for('static', filename='example_images/gimolost_les/5.jpg') }}" alt="Example 5">
+        <img src="{{ url_for('static', filename='example_images/gimolost_les/6.jpg') }}" alt="Example 6">
+    </div>
+{% endblock %}

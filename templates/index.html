@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ягодный Ассистент</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            background-color: #f5f5f5;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        #content {
+            width: 80%;
+            max-width: 1200px;
+            margin: 20px auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            position: relative;
+            min-height: 100vh;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        #file-upload {
+            margin-top: 50px;
+            background-color: white;
+            border: 2px dashed #4CAF50;
+            padding: 20px;
+            width: 70%;
+            max-width: 400px;
+            position: relative;
+            cursor: pointer;
+            margin: auto;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column; /* Изменено значение с row на column */
+            align-items: center;
+            justify-content: center;
+        }
+
+        #file-upload i {
+            margin-right: 10px;
+        }
+
+        #file-upload-label {
+            font-size: 1.5em;
+            display: flex;
+            align-items: center; /* Выравниваем по центру по вертикали */
+        }
+
+        #file-name {
+            color: green;
+            text-decoration: underline dashed;
+            font-size: 1.2em;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            max-width: 80%;
+            display: inline-block;
+        }
+
+        #file-preview-container {
+            display: none;
+            text-align: center;
+        }
+
+        #file-preview {
+            max-width: 100%;
+            max-height: 300px;
+            margin: 20px 0;
+        }
+
+        input[type="file"] {
+            display: none;
+        }
+
+        input[type="submit"] {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        #file-warning {
+            margin-top: 20px;
+            font-weight: bold;
+            color: rgb(5, 5, 5);
+        }
+
+        #file-name {
+            vertical-align: middle;
+            font-size: 1em;
+        }
+
+        #processing-icon {
+            display: none;
+            margin-top: 20px;
+        }
+
+        #processing-icon i {
+            margin-right: 10px;
+        }
+
+        #berry-list {
+            margin-top: 200px;
+        }
+
+        #berry-list h2 {
+            color: #333;
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        .berry-buttons {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .berry-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 50px;
+            padding: 10px 20px;
+            background: linear-gradient(45deg, #4CAF50, #2196F3);
+            color: white;
+            text-decoration: none;
+            border: none;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.3s ease;
+        }
+
+        .berry-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="content">
+        <h1>Ягодный Ассистент</h1>
+        <div id="file-upload" onclick="triggerFileInput()">
+            <label id="file-upload-label" for="file">
+                <i id="upload-icon" class="fa fa-image"></i>
+                Выберите файл
+            </label>
+            <span id="file-name"></span>
+            <div id="file-preview-container">
+                <img id="file-preview" src="" alt="Выбранное изображение">
+            </div>
+            <form id="upload-form" action="/upload" method="post" enctype="multipart/form-data">
+                <input type="file" name="file" id="file" accept=".png, .jpeg, .jpg" onchange="previewFile()">
+            </form>
+        </div>
+        <p id="file-warning">Выберите файл с расширением .png | .jpeg | .jpg | .jfif | .webp формата RGB</p>
+        <input type="submit" id="classify-button" value="Определить" onclick="classifyImage()">
+        <p id="file-not-selected-warning" style="color: red; display: none;">Выберите файл перед классификацией</p>
+        <div id="processing-icon" style="display: none; font-size: 1.5em;">
+            <i class="fa fa-spinner fa-spin" style="font-size: 1.5em;"></i>
+            Обработка...
+        </div>
+        {% if message %}
+        <p>{{ message }}</p>
+        {% endif %}
+        <div id="berry-list">
+            <h2>Дикорастущие Ягоды России</h2>
+            <div class="berry-buttons">
+                {% for russian_name, code_name in russian_class_names_mapping.items() %}
+                    <a href="{{ url_for('class_page', predicted_class=code_name) }}" class="berry-button">{{ russian_name }}</a>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        function triggerFileInput() {
+            var fileInput = document.getElementById('file');
+            if (!fileInput) {
+                return;
+            }
+
+            fileInput.click();
+            fileInput.value = '';
+            document.getElementById('upload-icon').style.display = 'inline';
+        }
+
+        function previewFile() {
+            var fileInput = document.getElementById('file');
+            var fileNameDisplay = document.getElementById('file-name');
+            var filePreview = document.getElementById('file-preview');
+            var filePreviewContainer = document.getElementById('file-preview-container');
+            var fileWarning = document.getElementById('file-warning');
+            var uploadIcon = document.getElementById('upload-icon');
+
+            if (!fileInput || !fileInput.files || fileInput.files.length === 0) {
+                return;
+            }
+
+            var file = fileInput.files[0];
+
+            fileNameDisplay.innerHTML = file.name;
+            document.getElementById('file-upload-label').innerHTML = 'Выбранный файл:';
+
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                filePreview.src = e.target.result;
+                filePreviewContainer.style.display = 'block';
+                fileWarning.style.display = 'none';
+                uploadIcon.style.display = 'none'; // Скрываем значок после загрузки файла
+            };
+
+            reader.readAsDataURL(file);
+        }
+
+        function classifyImage() {
+            var fileInput = document.getElementById('file');
+            var classifyButton = document.getElementById('classify-button');
+            var processingIcon = document.getElementById('processing-icon');
+            var uploadForm = document.getElementById('upload-form');
+            var fileNotSelectedWarning = document.getElementById('file-not-selected-warning');
+
+            if (!fileInput || !fileInput.files || fileInput.files.length === 0) {
+                fileNotSelectedWarning.style.display = 'block'; // Показываем уведомление
+                return;
+            }
+
+            fileNotSelectedWarning.style.display = 'none'; // Скрываем уведомление, если файл выбран
+
+            var file = fileInput.files[0];
+
+            classifyButton.style.display = 'none';
+            processingIcon.style.display = 'block';
+
+            uploadForm.submit();
+        }
+    </script>
+</body>
+
+</html>

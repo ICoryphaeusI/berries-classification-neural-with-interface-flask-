@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ predicted_class }}{% endblock %}
+
+{% block content %}
+    <h1>{{ predicted_class }}</h1>
+    <div class="plant-description">
+
+        <h3>Описание</h3>
+        <p>Жимолость съедобная представляет собой прямостоячий или ползучий кустарник с цельными листьями. В России произрастает более 100 видов, но в средней полосе распространено около 14 из них. Кустарник поражает своей красотой благодаря крупным белым, розоватым, желтоватым или голубым цветкам, расположенным на концах веток.</p>
+
+        <h3>Ягоды</h3>
+        <p>Появляющиеся ягоды группируются парами и иногда срастаются друг с другом. Цветение происходит с конца мая до середины июня, создавая привлекательный вид и принося пользу пчелам, опыляющим цветки.</p>
+
+        <h3>Использование в пище</h3>
+        <p>Ягоды жимолости съедобны и могут использоваться в кулинарии для приготовления варенья, сиропов, компотов и других блюд. Однако убедитесь, что собираете ягоды именно съедобного вида, так как существуют разные виды жимолости, и некоторые из них могут быть ядовитыми.</p>
+
+        <h3>Цветение и сбор урожая</h3>
+        <p>Цветение происходит в конце мая и продолжается до середины июня. Сбор урожая лучше проводить, когда ягоды полностью созрели и приобрели характерный цвет и вкус.</p>
+
+</div>
+
+    <h2>{{ predicted_class }}</h2>
+    <div class="image-examples">
+        <img src="{{ url_for('static', filename='example_images/gimolost/1.jpg') }}" alt="Example 1">
+        <img src="{{ url_for('static', filename='example_images/gimolost/2.jpg') }}" alt="Example 2">
+        <img src="{{ url_for('static', filename='example_images/gimolost/3.jpg') }}" alt="Example 3">
+        <img src="{{ url_for('static', filename='example_images/gimolost/4.jpg') }}" alt="Example 4">
+        <img src="{{ url_for('static', filename='example_images/gimolost/5.jpg') }}" alt="Example 5">
+        <img src="{{ url_for('static', filename='example_images/gimolost/6.jpg') }}" alt="Example 6">
+    </div>
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ predicted_class }}{% endblock %}
+
+{% block content %}
+    <h1>{{ predicted_class }}</h1>
+    <div class="plant-description">
+
+        <h3>Описание растения</h3>
+        <p>Годжи - это многолетний кустарник с тонкими шипами и красивыми лиловыми или пурпурными цветками. В период созревания ягоды приобретают продолговатую форму и насыщенный красный оттенок.</p>
+
+        <h3>Полезные вещества</h3>
+        <p>Эти плоды богаты витаминами группы C и B, фосфором, цинком, железом, медью, селеном, кальцием, антиоксидантами и другими полезными веществами.</p>
+
+        <h3>Здоровье и иммунитет</h3>
+        <p>Употребление ягод Годжи способствует борьбе с раковыми клетками, укрепляет иммунитет и продлевает жизнь.</p>
+
+        <h3>Лечебные свойства</h3>
+        <p>Традиционно Годжи используют при лечении заболеваний почек, печени и репродуктивной системы, а также при повышенном уровне сахара и бессоннице.</p>
+
+        <h3>Профилактическое действие</h3>
+        <p>Считается, что эти плоды способны предотвратить болезнь Альцгеймера, диабет, нормализовать работу нервной системы, гормональный баланс и уровень мелатонина в организме.</p>
+
+    </div>
+
+    <h2>{{ predicted_class }}</h2>
+    <div class="image-examples">
+        <img src="{{ url_for('static', filename='example_images/godgi/1.jpg') }}" alt="Example 1">
+        <img src="{{ url_for('static', filename='example_images/godgi/2.jpeg') }}" alt="Example 2">
+        <img src="{{ url_for('static', filename='example_images/godgi/3.jpeg') }}" alt="Example 3">
+        <img src="{{ url_for('static', filename='example_images/godgi/4.png') }}" alt="Example 4">
+        <img src="{{ url_for('static', filename='example_images/godgi/5.jpeg') }}" alt="Example 5">
+        <img src="{{ url_for('static', filename='example_images/godgi/6.png') }}" alt="Example 6">
+    </div>
+{% endblock %}

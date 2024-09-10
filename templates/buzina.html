@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ predicted_class }}{% endblock %}
+
+{% block content %}
+    <h1>{{ predicted_class }}</h1>
+    <div class="plant-description">
+
+        <h3>Распространение</h3>
+        <p>Черная бузина - многолетнее дерево или кустарник, которое достигает высоты до 10 м. Встречается в средней полосе России, а также в Крыму и на Кавказе. Характеризуется серым стволом и ветвями.</p>
+    
+        <h3>Цветение и плоды</h3>
+        <p>Цветки черной бузины небольшие, желто-белые или кремового цвета. Черно-фиолетовые ягоды созревают в августе или сентябре.</p>
+    
+        <h3>Химический состав</h3>
+        <p>Черная бузина славится большим содержанием витамина C, каротина, глюкозы, фруктозы, свободных кислот и аминокислот.</p>
+    
+        <h3>Медицинское применение</h3>
+        <p>Употребление плодов бузины приносит пользу в лечении гепатита, язвенной болезни. Также она может использоваться в борьбе с раком желудка и кожи.</p>
+    
+        <h3>Применение в кулинарии</h3>
+        <p>Плоды черной бузины могут быть использованы для приготовления варенья, компотов, сиропов и напитков.</p>
+    
+        <h3>Предостережения</h3>
+        <p>Важно заметить, что не все части черной бузины безопасны для употребления, и перед использованием их в медицинских или кулинарных целях, необходимо обеспечить их безопасность.</p>
+    
+    </div>
+
+    <h2>{{ predicted_class }}</h2>
+    <div class="image-examples">
+        <img src="{{ url_for('static', filename='example_images/buzina/1.jpg') }}" alt="Example 1">
+        <img src="{{ url_for('static', filename='example_images/buzina/2.jpg') }}" alt="Example 2">
+        <img src="{{ url_for('static', filename='example_images/buzina/3.jpg') }}" alt="Example 3">
+        <img src="{{ url_for('static', filename='example_images/buzina/4.jpg') }}" alt="Example 4">
+        <img src="{{ url_for('static', filename='example_images/buzina/5.png') }}" alt="Example 5">
+        <img src="{{ url_for('static', filename='example_images/buzina/6.jpg') }}" alt="Example 6">
+    </div>
+{% endblock %}

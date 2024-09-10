@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ predicted_class }}{% endblock %}
+
+{% block content %}
+    <h1>{{ predicted_class }}</h1>
+    <div class="plant-description">
+
+        <h3>Распространение в России</h3>
+        <p>Можжевельник встречается в различных регионах России, включая леса, степи и горные районы.</p>
+
+        <h3>Внешний вид растения и ягод</h3>
+        <p>Можжевельник — род хвойных кустарников и деревьев с игловидными листьями и синеватыми ягодами.</p>
+
+        <h3>Вкус и запах</h3>
+        <p>Ягоды можжевельника обладают характерным ароматом и варьирующим вкусом.</p>
+
+        <h3>Применение</h3>
+        <p>Можжевельник используется в ландшафтном дизайне, а также в традиционной медицине и при производстве напитков.</p>
+
+        <h3>Полезные свойства</h3>
+        <p>Некоторые виды можжевельника могут иметь полезные свойства, но перед использованием их в пищу или в медицинских целях рекомендуется проконсультироваться с профессионалом.</p>
+
+        <h3>Опасные свойства</h3>
+        <p>Употребление некоторых видов можжевельника может вызвать раздражение и реакции у некоторых людей.</p>
+
+    </div>
+
+    <h2>{{ predicted_class }}</h2>
+    <div class="image-examples">
+        <img src="{{ url_for('static', filename='example_images/mogevelnik/1.jpg') }}" alt="Example 1">
+        <img src="{{ url_for('static', filename='example_images/mogevelnik/2.jpg') }}" alt="Example 2">
+        <img src="{{ url_for('static', filename='example_images/mogevelnik/3.jpg') }}" alt="Example 3">
+        <img src="{{ url_for('static', filename='example_images/mogevelnik/4.jpg') }}" alt="Example 4">
+        <img src="{{ url_for('static', filename='example_images/mogevelnik/5.png') }}" alt="Example 5">
+        <img src="{{ url_for('static', filename='example_images/mogevelnik/6.jpg') }}" alt="Example 6">
+    </div>
+{% endblock %}

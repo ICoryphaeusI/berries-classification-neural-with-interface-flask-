@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ predicted_class }}{% endblock %}
+
+{% block content %}
+    <h1>{{ predicted_class }}</h1>
+    <div class="plant-description">
+
+        <h3>Дополнительные названия</h3>
+        <p>Также известна как голубица или дурника.</p>
+
+        <h3>Распространение</h3>
+        <p>Произрастает на торфяных болотах в умеренных частях страны, а также встречается на Новой Земле.</p>
+
+        <h3>Описание растения</h3>
+        <p>Кустарник высотой до 1 м с круглыми ветвями и обратнояйцевидными листьями. Цветет белыми цветами, из которых в начале августа образуются черные ягоды с голубым налетом.</p>
+
+        <h3>Полезные вещества</h3>
+        <p>Голубика богата витаминами C, K и E, железом, магнием, цинком, калием и фосфором. Также содержит пектиновые вещества, органические кислоты и клетчатку.</p>
+
+        <h3>Лечебные свойства</h3>
+        <p>Все эти компоненты обеспечивают жаропонижающие, сосудоукрепляющие и противовоспалительные лечебные свойства.</p>
+
+        <h3>Применение в медицине</h3>
+        <p>Употребление голубики рекомендуется для профилактики сердечных болезней, нормализации работы щитовидной железы и желудочно-кишечного тракта. Также она оказывает мочегонное, желчегонное и противоязвенное действия.</p>
+
+    </div>
+
+
+    <h2>{{ predicted_class }}</h2>
+    <div class="image-examples">
+        <img src="{{ url_for('static', filename='example_images/golubika/1.jpg') }}" alt="Example 1">
+        <img src="{{ url_for('static', filename='example_images/golubika/2.jpg') }}" alt="Example 2">
+        <img src="{{ url_for('static', filename='example_images/golubika/3.jpg') }}" alt="Example 3">
+        <img src="{{ url_for('static', filename='example_images/golubika/4.jpg') }}" alt="Example 4">
+        <img src="{{ url_for('static', filename='example_images/golubika/5.jpg') }}" alt="Example 5">
+        <img src="{{ url_for('static', filename='example_images/golubika/6.png') }}" alt="Example 6">
+    </div>
+{% endblock %}

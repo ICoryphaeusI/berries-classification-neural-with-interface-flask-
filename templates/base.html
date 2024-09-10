@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Your Website Title{% endblock %}</title>
+    <!-- Здесь вы можете добавить ваши стили, скрипты и другие метатеги -->
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+
+        #content {
+            width: 80%;
+            max-width: 1200px;
+            margin: 20px auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        .go-home-button {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 1em;
+            cursor: pointer;
+        }
+
+        .go-home-button:hover {
+            background-color: #45a049;
+        }
+
+        h1 {
+            font-size: 2em;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 1.5em;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 1.2em;
+            line-height: 1.6;
+            color: #555;
+        }
+
+        .image-examples {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .image-examples img {
+            width: calc(33.33% - 10px);
+            max-width: 100%;
+            height: 500px; /* Увеличьте высоту в 5 раз */
+            object-fit: cover;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            flex-grow: 1; /* Равномерное распределение пространства внутри ряда */
+            margin-right: 10px; /* Вернул пробелы между изображениями */
+        }
+
+        .plant-description {
+            margin-top: 20px;
+            line-height: 1.6;
+        }
+
+        .plant-description h3 {
+            font-size: 1.8em;
+            margin-bottom: 10px;
+        }
+
+        .plant-description p {
+            margin-bottom: 15px;
+        }
+        
+        .image-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 999;
+            overflow: hidden;
+        }
+
+        .modal-content {
+            max-width: 700px;
+            max-height: 900px;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content img {
+            width: auto;
+            height: auto;
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            display: block;
+            margin: 0 auto;
+        }
+
+    </style>
+</head>
+
+<body>
+    <!-- Кнопка для перехода на главную страницу -->
+    <a href="{{ url_for('index') }}" class="go-home-button">На главную</a>
+
+    <!-- Контент страницы, который будет переопределен в дочерних страницах -->
+    <div id="content">
+        {% block content %}{% endblock %}
+    </div>
+
+    <!-- Здесь вы можете добавить ваши скрипты и другие элементы перед закрытием тега </body> -->
+    <script>
+        function openImageModal(imageSrc) {
+            var modal = document.createElement('div');
+            modal.className = 'image-modal';
+    
+            var modalContent = document.createElement('div');
+            modalContent.className = 'modal-content';
+    
+            var image = document.createElement('img');
+            image.src = imageSrc;
+    
+            modalContent.appendChild(image);
+            modal.appendChild(modalContent);
+    
+            document.body.appendChild(modal);
+    
+            modal.onclick = function () {
+                document.body.removeChild(modal);
+            };
+        }
+    
+        var images = document.querySelectorAll('.image-examples img');
+        images.forEach(function (image) {
+            image.onclick = function () {
+                openImageModal(image.src);
+            };
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ predicted_class }}{% endblock %}
+
+{% block content %}
+    <h1>{{ predicted_class }}</h1>
+    <div class="plant-description">
+
+        <h3>Распространение в России</h3>
+        <p>Ирга произрастает в различных регионах России, включая леса, луга, края лесов и опушки.</p>
+
+        <h3>Внешний вид растения и ягод</h3>
+        <p>Ирга – травянистое растение с черными блестящими ягодами, сформированными в грозди. Листья зазубренные, состоят из пятерых листочков. Цветки белые или розовые, собранные в соцветия. Ягоды круглые, блестящие, черного цвета.</p>
+
+        <h3>Вкус и запах</h3>
+        <p>Ягоды ирги обладают сладким вкусом и приятным ароматом.</p>
+
+        <h3>Применение</h3>
+        <p>Ягоды ирги используются в свежем виде, а также для приготовления варенья, соков, компотов и вина.</p>
+
+        <h3>Полезные свойства</h3>
+        <p>Ирга богата витаминами C и K, содержит минералы, такие как магний и марганец. Используется в народной медицине как антисептик и противовоспалительное средство.</p>
+
+        <h3>Опасные свойства</h3>
+        <p>Недозревшие и спелые ягоды могут нанести вред здоровью. Перед использованием в лечебных целях рекомендуется проконсультироваться с врачом, особенно при наличии медицинских проблем или приеме других медикаментов.</p>
+
+    </div>
+
+    <h2>{{ predicted_class }}</h2>
+    <div class="image-examples">
+        <img src="{{ url_for('static', filename='example_images/irga/1.jpg') }}" alt="Example 1">
+        <img src="{{ url_for('static', filename='example_images/irga/2.webp') }}" alt="Example 2">
+        <img src="{{ url_for('static', filename='example_images/irga/3.webp') }}" alt="Example 3">
+        <img src="{{ url_for('static', filename='example_images/irga/4.jpg') }}" alt="Example 4">
+        <img src="{{ url_for('static', filename='example_images/irga/5.jpeg') }}" alt="Example 5">
+        <img src="{{ url_for('static', filename='example_images/irga/6.jpeg') }}" alt="Example 6">
+    </div>
+{% endblock %}

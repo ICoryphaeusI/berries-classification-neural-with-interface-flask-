@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ predicted_class }}{% endblock %}
+
+{% block content %}
+    <h1>{{ predicted_class }}</h1>
+    <div class="plant-description">
+
+        <h3>Другие названия</h3>
+        <p>Также известен как болотная калла.</p>
+    
+        <h3>Распространение</h3>
+        <p>Белокрыльник болотный обитает в болотистых районах и влажных местах, типичен для определенных регионов с умеренным климатом.</p>
+    
+        <h3>Внешний вид растения</h3>
+        <p>Растение имеет толстые глянцевые листья и красивые цветы, а зрелые ягоды красного цвета придают ему декоративный вид.</p>
+    
+        <h3>Токсичность</h3>
+        <p>Белокрыльник болотный является токсичным растением. При попадании сока ягод на кожу возникает сильнейшее раздражение, поэтому необходимо избегать контакта с соком и принимать меры предосторожности при обработке растения.</p>
+    
+        <h3>Меры предосторожности</h3>
+        <p>Из-за токсичности белокрыльника болотного следует быть предельно осторожным при сборе и обработке растения. Избегайте попадания сока ягод на кожу и следите за использованием соответствующей защитной экипировки.</p>
+    
+        <h3>Экологическая роль</h3>
+        <p>В природе белокрыльник болотный играет важную роль в биоразнообразии болотных экосистем и может служить индикатором качества влажных природных местообитаний.</p>
+    </div>
+
+    <h2>{{ predicted_class }}</h2>
+    <div class="image-examples">
+        <img src="{{ url_for('static', filename='example_images/belokrilnik/1.jpg') }}" alt="Example 1">
+        <img src="{{ url_for('static', filename='example_images/belokrilnik/2.jpg') }}" alt="Example 2">
+        <img src="{{ url_for('static', filename='example_images/belokrilnik/3.jpg') }}" alt="Example 3">
+        <img src="{{ url_for('static', filename='example_images/belokrilnik/4.jpg') }}" alt="Example 4">
+        <img src="{{ url_for('static', filename='example_images/belokrilnik/5.jpg') }}" alt="Example 5">
+        <img src="{{ url_for('static', filename='example_images/belokrilnik/6.webp') }}" alt="Example 6">
+        
+    </div>
+{% endblock %}

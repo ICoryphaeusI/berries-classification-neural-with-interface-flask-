@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ predicted_class }}{% endblock %}
+
+{% block content %}
+    <h1>{{ predicted_class }}</h1>
+    <div class="plant-description">
+
+        <h3>Распространение</h3>
+        <p>Барбарис, также известный как карамельное дерево, можно найти в северной части страны, в Южной и Средней Европе, Крыму и на Кавказе.</p>
+    
+        <h3>Внешний вид растения и ягод</h3>
+        <p>Барбарис представляет собой вечнозеленые кустарники с тонкими прямостоячими побегами. Листья яйцевидной формы, а из цветков в кистях образуются шаровидные черные или красные ягоды примерно по 1 см.</p>
+    
+        <h3>Плоды и их употребление</h3>
+        <p>Следует употреблять исключительно зрелые плоды, так как еще зеленые ягоды чрезвычайно ядовиты.</p>
+    
+        <h3>Состав и питательные вещества</h3>
+        <p>В барбарисе содержится много каротиноидов, углеводов, органических кислот, макро- и микроэлементов. Кроме того, во всех частях барбариса огромное содержание витаминов E, C и K.</p>
+    
+        <h3>Применение</h3>
+        <p>Барбарис может использоваться в пищу как источник ценных питательных веществ. Настойку из барбариса применяют при кровотечениях и воспалительных процессах, в качестве жаропонижающего и противомикробного средства. Сок выводит токсины и очищает организм при болезнях печени, ревматизме и воспалении мочевого пузыря и почек.</p>
+    </div>
+
+    <h2>{{ predicted_class }}</h2>
+    <div class="image-examples">
+        <img src="{{ url_for('static', filename='example_images/barbaris/1.jpg') }}" alt="Example 1">
+        <img src="{{ url_for('static', filename='example_images/barbaris/2.jpg') }}" alt="Example 2">
+        <img src="{{ url_for('static', filename='example_images/barbaris/3.jfif') }}" alt="Example 3">
+        <img src="{{ url_for('static', filename='example_images/barbaris/4.jpg') }}" alt="Example 4">
+        <img src="{{ url_for('static', filename='example_images/barbaris/5.jpg') }}" alt="Example 5">
+        <img src="{{ url_for('static', filename='example_images/barbaris/6.jpg') }}" alt="Example 6">
+    </div>
+{% endblock %}

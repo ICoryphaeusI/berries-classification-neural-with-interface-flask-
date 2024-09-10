@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ predicted_class }}{% endblock %}
+
+{% block content %}
+    <h1>{{ predicted_class }}</h1>
+    <div class="plant-description">
+
+        <h3>Место обитания</h3>
+        <p>Бузина травяная обитает в лесах, лугах, придорожных зонах и садах. Ее можно встретить на различных почвах, предпочитая влажные и умеренные условия.</p>
+    
+        <h3>Медицинское применение</h3>
+        <p>Трава и плоды бузины травяной используются в народной медицине. Она обладает диафоретическим, противовоспалительным и жаропонижающим действием. Используется при простудах, гриппе и респираторных заболеваниях.</p>
+    
+        <h3>Легенды и культурное значение</h3>
+        <p>В различных культурах бузина травяная часто упоминается в легендах и мифах. Ей приписывают защитные свойства и считают символом жизни и здоровья. В некоторых обрядах используется для оберега от болезней и бед.</p>
+    
+        <h3>Применение в кулинарии</h3>
+        <p>Плоды бузины травяной используют для приготовления варенья, сиропов, компотов и чая. Они придают напиткам особый аромат и вкус.</p>
+    
+        <h3>Осторожность</h3>
+        <p>Важно помнить, что не все виды бузины безопасны для употребления. Перед использованием в медицинских или кулинарных целях, рекомендуется убедиться в безопасности конкретного вида растения.</p>
+    
+    </div>
+
+    <h2>{{ predicted_class }}</h2>
+    <div class="image-examples">
+        <img src="{{ url_for('static', filename='example_images/buzina_yad/1.jpg') }}" alt="Example 1">
+        <img src="{{ url_for('static', filename='example_images/buzina_yad/2.jpg') }}" alt="Example 2">
+        <img src="{{ url_for('static', filename='example_images/buzina_yad/3.jpg') }}" alt="Example 3">
+        <img src="{{ url_for('static', filename='example_images/buzina_yad/4.jpg') }}" alt="Example 4">
+        <img src="{{ url_for('static', filename='example_images/buzina_yad/5.png') }}" alt="Example 5">
+        <img src="{{ url_for('static', filename='example_images/buzina_yad/6.jpg') }}" alt="Example 6">
+    </div>
+{% endblock %}

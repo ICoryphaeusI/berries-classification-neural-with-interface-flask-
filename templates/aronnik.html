@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ predicted_class }}{% endblock %}
+
+{% block content %}
+    <h1>{{ predicted_class }}</h1>
+    <div class="plant-description">
+
+        <h3>Другие названия</h3>
+        <p>Также известный как тельячья нога, арон или змий-трава.</p>
+    
+        <h3>Распространение</h3>
+        <p>Аронник пятнистый встречается в различных местах, обычно в лесах и у водоемов.</p>
+    
+        <h3>Внешний вид растения и ягод</h3>
+        <p>Аронник пятнистый представляет собой многолетнее травянистое растение с полушаровидными листьями и ярко-красными ягодами.</p>
+    
+        <h3>Ядовитость</h3>
+        <p>Растение очень ядовито. При употреблении может вызвать серьезные нарушения работы желудочно-кишечного тракта, аритмию, судороги и галлюцинации.</p>
+    
+        <h3>Опасные свойства</h3>
+        <p>Подчеркиваем, что аронник пятнистый является ядовитым растением, и его употребление может привести к серьезным последствиям для здоровья. Рекомендуется избегать контакта с этим растением и никоим образом не использовать его в пищевых или лечебных целях.</p>
+    </div>
+
+    <h2>{{ predicted_class }}</h2>
+    <div class="image-examples">
+        <img src="{{ url_for('static', filename='example_images/aronnik/1.jpg') }}" alt="Example 1">
+        <img src="{{ url_for('static', filename='example_images/aronnik/2.jpg') }}" alt="Example 2">
+        <img src="{{ url_for('static', filename='example_images/aronnik/3.webp') }}" alt="Example 3">
+        <img src="{{ url_for('static', filename='example_images/aronnik/4.jpg') }}" alt="Example 4">
+        <img src="{{ url_for('static', filename='example_images/aronnik/5.jpg') }}" alt="Example 5">
+        <img src="{{ url_for('static', filename='example_images/aronnik/6.png') }}" alt="Example 6">
+        
+    </div>
+{% endblock %}

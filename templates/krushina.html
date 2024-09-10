@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ predicted_class }}{% endblock %}
+
+{% block content %}
+    <h1>{{ predicted_class }}</h1>
+    <div class="plant-description">
+
+        <h3>Распространение в России</h3>
+        <p>Крушина, также известная как кизил или долгоцвет, встречается по всей территории России, от северных регионов до южных пределов страны. Этот кустарник или дерево может достигать высоты от 3 до 4,5 метра.</p>
+
+        <h3>Внешний вид растения и ягод</h3>
+        <p>Крушина имеет мелкие зеленоватые цветки, из которых в последствии формируются черные плоды-костянки. Ягоды содержат от двух до четырех косточек и являются характерным элементом этого растения.</p>
+
+        <h3>Сбор и употребление</h3>
+        <p>Ягоды крушины могут использоваться в виде настоя или жидкого экстракта. Они обладают свойствами легкого слабительного и могут использоваться в народной медицине для поддержания здоровья желудочно-кишечного тракта.</p>
+
+    </div>
+
+    <h2>{{ predicted_class }}</h2>
+    <div class="image-examples">
+        <img src="{{ url_for('static', filename='example_images/krushina/1.jpg') }}" alt="Example 1">
+        <img src="{{ url_for('static', filename='example_images/krushina/2.jpg') }}" alt="Example 2">
+        <img src="{{ url_for('static', filename='example_images/krushina/3.jpg') }}" alt="Example 3">
+        <img src="{{ url_for('static', filename='example_images/krushina/4.jpg') }}" alt="Example 4">
+        <img src="{{ url_for('static', filename='example_images/krushina/5.jpg') }}" alt="Example 5">
+        <img src="{{ url_for('static', filename='example_images/krushina/6.png') }}" alt="Example 6">
+    </div>
+{% endblock %}

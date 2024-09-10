@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ predicted_class }}{% endblock %}
+
+{% block content %}
+    <h1>{{ predicted_class }}</h1>
+    <div class="plant-description">
+
+        <h3>Распространение и сбор в природе</h3>
+        <p>Рябина обыкновенная произрастает в различных регионах, особенно на сухих и каменистых почвах. Сбор ягод проводится в период с конца октября по начало ноября, когда они достигают полной зрелости и приобретают наибольшую питательную ценность.</p>
+
+        <h3>Кулинарное использование</h3>
+        <p>Ягоды рябины широко используются в кулинарии для приготовления варенья, сиропов, компотов и других десертов. Они добавляются к мясным блюдам для придания особого вкуса и аромата.</p>
+
+        <h3>Остерегайтесь!</h3>
+        <p>Не рекомендуется употреблять большие количества ягод рябины, так как они могут вызвать расстройство желудка. Также следует быть осторожными с ягодами, собранными в неизвестных или загрязненных местах.</p>
+
+        <h3>Приметы и суеверия</h3>
+        <p>В народной традиции рябина часто ассоциируется с оберегом от злых сил и болезней. Ягоды иногда используются как талисман для приготовления амулетов.</p>
+
+    </div>
+
+    <h2>{{ predicted_class }}</h2>
+    <div class="image-examples">
+        <img src="{{ url_for('static', filename='example_images/ryabina/1.jpg') }}" alt="Example 1">
+        <img src="{{ url_for('static', filename='example_images/ryabina/2.jpg') }}" alt="Example 2">
+        <img src="{{ url_for('static', filename='example_images/ryabina/3.jpg') }}" alt="Example 3">
+        <img src="{{ url_for('static', filename='example_images/ryabina/4.jpg') }}" alt="Example 4">
+        <img src="{{ url_for('static', filename='example_images/ryabina/5.jpg') }}" alt="Example 5">
+        <img src="{{ url_for('static', filename='example_images/ryabina/6.jpg') }}" alt="Example 6">
+{% endblock %}

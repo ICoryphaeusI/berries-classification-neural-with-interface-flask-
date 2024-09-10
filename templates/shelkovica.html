@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ predicted_class }}{% endblock %}
+
+{% block content %}
+    <h1>{{ predicted_class }}</h1>
+    <div class="plant-description">
+
+        <h3>Распространение</h3>
+        <p>Шелковица произрастает в Северной и Средней Европе, а также в Сибири, Забайкалье и на Кавказе. Она часто встречается в лесах и на болотах, предпочитает сухие и каменистые почвы.</p>
+
+        <h3>Сбор ягод</h3>
+        <p>Ягоды шелковицы собирают в период с конца октября до начала ноября. Этот срок позволяет собрать плоды в самом зрелом и полезном состоянии.</p>
+
+        <h3>Медицинское применение</h3>
+        <p>Шелковицу рекомендуется использовать при нарушениях работы сердца и почек. Плоды оказывают желчегонное, потогонное и мочегонное действие, а также проявляют противовоспалительные свойства.</p>
+
+        <h3>Белая шелковица</h3>
+        <p>Белая шелковица, подобно черной, содержит множество полезных веществ. Она обогащает организм витаминами и минералами, укрепляет иммунитет и способствует нормализации работы сердечно-сосудистой системы.</p>
+
+        <h3>Противопоказания</h3>
+        <p>Несмотря на многочисленные полезные свойства, перед использованием шелковицы в медицинских целях следует проконсультироваться с врачом, особенно при наличии хронических заболеваний.</p>
+
+    </div>
+
+    <h2>{{ predicted_class }}</h2>
+    <div class="image-examples">
+        <img src="{{ url_for('static', filename='example_images/shelkovica/1.jpg') }}" alt="Example 1">
+        <img src="{{ url_for('static', filename='example_images/shelkovica/2.webp') }}" alt="Example 2">
+        <img src="{{ url_for('static', filename='example_images/shelkovica/3.jpg') }}" alt="Example 3">
+        <img src="{{ url_for('static', filename='example_images/shelkovica/4.jpg') }}" alt="Example 4">
+        <img src="{{ url_for('static', filename='example_images/shelkovica/5.jpg') }}" alt="Example 5">
+        <img src="{{ url_for('static', filename='example_images/shelkovica/6.jpg') }}" alt="Example 6">
+    </div>
+{% endblock %}

@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ predicted_class }}{% endblock %}
+
+{% block content %}
+    <h1>{{ predicted_class }}</h1>
+    <div class="plant-description">
+
+        <h3>Распространение в России</h3>
+        <p>Паслен черный встречается в различных регионах России, включая леса, луга, края лесов и опушки.</p>
+    
+        <h3>Внешний вид растения и ягод</h3>
+        <p>Паслен черный (вороняжка или ведьмина ягода) представляет собой травянистое растение с черными блестящими ягодами, сформированными в грозди. Листья зазубренные, состоят из пятерых листочков. Цветки белые или розовые, собранные в соцветия. Ягоды круглые, блестящие, черного цвета.</p>
+    
+        <h3>Вкус и запах</h3>
+        <p>Ягоды паслена черного обладают сладким вкусом и приятным ароматом.</p>
+    
+        <h3>Применение</h3>
+        <p>Ягоды паслена черного (вороняжки) используются в свежем виде, а также для приготовления варенья, соков, компотов и вина.</p>
+    
+        <h3>Полезные свойства</h3>
+        <p>Паслен черный богат витаминами C и K, содержит минералы, такие как магний и марганец. Используется в народной медицине как антисептик и противовоспалительное средство.</p>
+    
+        <h3>Опасные свойства</h3>
+        <p>Вред здоровью могут нанести как недозревшие ягоды, так и спелые. Перед использованием в лечебных целях рекомендуется проконсультироваться с врачом, особенно при наличии медицинских проблем или приеме других медикаментов.</p>
+    </div>
+
+    <h2>{{ predicted_class }}</h2>
+    <div class="image-examples">
+        <img src="{{ url_for('static', filename='example_images/paslen_chern/1.jpg') }}" alt="Example 1">
+        <img src="{{ url_for('static', filename='example_images/paslen_chern/2.jpeg') }}" alt="Example 2">
+        <img src="{{ url_for('static', filename='example_images/paslen_chern/3.jpg') }}" alt="Example 3">
+        <img src="{{ url_for('static', filename='example_images/paslen_chern/4.jpg') }}" alt="Example 4">
+        <img src="{{ url_for('static', filename='example_images/paslen_chern/5.png') }}" alt="Example 5">
+        <img src="{{ url_for('static', filename='example_images/paslen_chern/6.png') }}" alt="Example 6">
+    </div>
+{% endblock %}

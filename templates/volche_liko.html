@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ predicted_class }}{% endblock %}
+
+{% block content %}
+    <h1>{{ predicted_class }}</h1>
+    <div class="plant-description">
+
+        <h3>Волчье лыко: Описание</h3>
+        <p>Волчье лыко — это кустарник, достигающий определенной высоты, с привлекательными красными ягодами, которые привлекают внимание своим ярким цветом. Растение обычно произрастает в определенных природных условиях и может встречаться в различных регионах.</p>
+
+        <h3>Ягоды и их характеристики</h3>
+        <p>Ягоды волчьего лыка имеют выразительный красный цвет и обычно формируются из цветов, похожих на цветы сирени. Эти плоды содержат токсины, что делает их опасными для человека.</p>
+
+        <h3>Опасности и меры предосторожности</h3>
+        <p>Волчье лыко считается ядовитым растением, и его ягоды могут представлять серьезную угрозу для здоровья. Контакт с этим растением, особенно с ягодами, следует избегать. В случае случайного воздействия рекомендуется промыть кожу водой и немедленно обратиться за медицинской помощью.</p>
+
+        <h3>Профилактика отравления</h3>
+        <p>Для предотвращения отравления и минимизации рисков рекомендуется осуществлять внимательный контроль за окружающей средой и предпринимать соответствующие меры предосторожности, чтобы избежать случайного воздействия на данное растение.</p>
+
+    </div>
+
+    <h2>{{ predicted_class }}</h2>
+    <div class="image-examples">
+        <img src="{{ url_for('static', filename='example_images/volche_liko/1.jpg') }}" alt="Example 1">
+        <img src="{{ url_for('static', filename='example_images/volche_liko/2.jpg') }}" alt="Example 2">
+        <img src="{{ url_for('static', filename='example_images/volche_liko/3.jpg') }}" alt="Example 3">
+        <img src="{{ url_for('static', filename='example_images/volche_liko/4.jpg') }}" alt="Example 4">
+        <img src="{{ url_for('static', filename='example_images/volche_liko/5.jpg') }}" alt="Example 5">
+        <img src="{{ url_for('static', filename='example_images/volche_liko/6.png') }}" alt="Example 6">
+    </div>
+{% endblock %}

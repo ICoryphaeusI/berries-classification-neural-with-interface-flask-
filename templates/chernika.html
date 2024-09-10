@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ predicted_class }}{% endblock %}
+
+{% block content %}
+    <h1>{{ predicted_class }}</h1>
+    <div class="plant-description">
+
+        <h3>Распределение и наименования</h3>
+        <p>Черника, также известная как чернега, чернец или чернижник, произрастает в северной и средней части России, на Кавказе и по всей Сибири.</p>
+    
+        <h3>Описание внешнего вида</h3>
+        <p>Этот низкорослый кустарник достигает высоты до 30 см. Его листья яйцевидные, остроконечные и светло-зеленые. Черные ягоды с синим налетом имеют форму шара, сравнимую с горошиной.</p>
+    
+        <h3>Цветение и сбор плодов</h3>
+        <p>Черника цветет в мае и июне, а сбор плодов начинается в июле и августе.</p>
+    
+        <h3>Химический состав</h3>
+        <p>В плодах черники содержатся органические кислоты, сахар, каротин, витамин C и группы B. Эти компоненты способствуют улучшению зрения, укреплению капилляров и снижению объема сахара в крови.</p>
+    
+        <h3>Полезные свойства и антиоксиданты</h3>
+        <p>Главным полезным свойством черники считается наличие в ней множества антиоксидантов, способствующих профилактике раковых заболеваний.</p>
+    
+    </div>
+
+    <h2>{{ predicted_class }}</h2>
+    <div class="image-examples">
+        <img src="{{ url_for('static', filename='example_images/chernika/1.webp') }}" alt="Example 1">
+        <img src="{{ url_for('static', filename='example_images/chernika/2.jpg') }}" alt="Example 2">
+        <img src="{{ url_for('static', filename='example_images/chernika/3.jpg') }}" alt="Example 3">
+        <img src="{{ url_for('static', filename='example_images/chernika/4.jpg') }}" alt="Example 4">
+        <img src="{{ url_for('static', filename='example_images/chernika/5.png') }}" alt="Example 5">
+        <img src="{{ url_for('static', filename='example_images/chernika/6.png') }}" alt="Example 6">
+    </div>
+{% endblock %}

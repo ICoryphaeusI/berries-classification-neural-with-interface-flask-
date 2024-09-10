@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ predicted_class }}{% endblock %}
+
+{% block content %}
+    <h1>{{ predicted_class }}</h1>
+    <div class="plant-description">
+
+        <h3>Распространение</h3>
+        <p>Боярышник особенно часто встречается в Средней Европе и России, облюбовав различные типы почв.</p>
+    
+        <h3>Описание</h3>
+        <p>Растение характеризуется разрезными листьями и ветвями с шипами, придающими ему защитный характер. Розоцветные белые цветки достигают 1,5 см в диаметре.</p>
+    
+        <h3>Плоды</h3>
+        <p>Плодами боярышника являются костянки до 4 см, схожие с рябиной, но с отличительным ароматом и вкусом. Они появляются осенью и имеют разноцветную расцветку, включая красную, желтую или оранжевую.</p>
+    
+        <h3>Полезные свойства</h3>
+        <p>Боярышник содержит большое количество полифенолов, которые считаются профилактикой раковых заболеваний, диабета 2-го типа, астмы и сердечно-сосудистых болезней. Кроме того, он обладает противовоспалительным действием.</p>
+    
+        <h3>Медицинское применение</h3>
+        <p>Экстракты боярышника используются в медицине в качестве дополнительного средства для поддержания здоровья сердечно-сосудистой системы и снижения риска определенных заболеваний.</p>
+    </div>
+
+    <h2>{{ predicted_class }}</h2>
+    <div class="image-examples">
+        <img src="{{ url_for('static', filename='example_images/boyaroshnik/1.jpg') }}" alt="Example 1">
+        <img src="{{ url_for('static', filename='example_images/boyaroshnik/2.jpg') }}" alt="Example 2">
+        <img src="{{ url_for('static', filename='example_images/boyaroshnik/3.jpg') }}" alt="Example 3">
+        <img src="{{ url_for('static', filename='example_images/boyaroshnik/4.jpg') }}" alt="Example 4">
+        <img src="{{ url_for('static', filename='example_images/boyaroshnik/5.jpg') }}" alt="Example 5">
+        <img src="{{ url_for('static', filename='example_images/boyaroshnik/6.png') }}" alt="Example 6">
+    </div>
+{% endblock %}

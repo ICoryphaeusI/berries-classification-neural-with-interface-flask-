@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ predicted_class }}{% endblock %}
+
+{% block content %}
+    <h1>{{ predicted_class }}</h1>
+    <div class="plant-description">
+
+        <h3>Распространение в России</h3>
+        <p>Клюква встречается на всей территории России, включая Дальний Восток.</p>
+
+        <h3>Внешний вид растения и ягод</h3>
+        <p>Клюква - вечнозеленый кустарник высотой до 30 см. Круглые ягоды размером 8-12 мм имеют яркий красный оттенок и созревают в сентябре-октябре.</p>
+
+        <h3>Вкус и запах</h3>
+        <p>Ягоды клюквы сладкие и кислые, обладают характерным вкусом.</p>
+
+        <h3>Применение</h3>
+        <p>Клюква богата сахарами, органическими кислотами, микроэлементами и витаминами, включая группы B, PP и C. Она применяется для нормализации пищеварения, снижения уровня холестерина, регуляции артериального давления, а также обладает противовоспалительными и противораковыми свойствами.</p>
+
+    </div>
+
+    <h2>{{ predicted_class }}</h2>
+    <div class="image-examples">
+        <img src="{{ url_for('static', filename='example_images/klukva/1.jpg') }}" alt="Example 1">
+        <img src="{{ url_for('static', filename='example_images/klukva/2.jpg') }}" alt="Example 2">
+        <img src="{{ url_for('static', filename='example_images/klukva/3.jpg') }}" alt="Example 3">
+        <img src="{{ url_for('static', filename='example_images/klukva/4.jpg') }}" alt="Example 4">
+        <img src="{{ url_for('static', filename='example_images/klukva/5.jpg') }}" alt="Example 5">
+        <img src="{{ url_for('static', filename='example_images/klukva/6.jpg') }}" alt="Example 6">
+    </div>
+{% endblock %}

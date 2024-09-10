@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ predicted_class }}{% endblock %}
+
+{% block content %}
+    <h1>{{ predicted_class }}</h1>
+    <div class="plant-description">
+
+        <h3>Распространение в России</h3>
+        <p>Паслен сладко-горький встречается в различных регионах России, чаще всего на лугах, опушках лесов и по берегам водоемов.</p>
+
+        <h3>Внешний вид растения и ягод</h3>
+        <p>Паслен сладко-горький представляет собой полукустарник с тонкими стеблями. Он образует красные продолговатые ягоды.</p>
+
+        <h3>Вкус и запах</h3>
+        <p>Плоды паслена сладко-горького имеют специфический вкус, сочетающий в себе сладость и горечь.</p>
+
+        <h3>Применение</h3>
+        <p>Паслен сладко-горький известен своими токсичными свойствами, и его плоды не подлежат употреблению в пищу. Растение иногда используется в медицинских целях, но при этом необходимо соблюдать особую осторожность.</p>
+
+        <h3>Опасные свойства</h3>
+        <p>Употребление плодов паслена сладко-горького может вызвать сильные высыпания и раздражения, а в некоторых случаях даже привести к летальному исходу. Рекомендуется избегать контакта с растением без специальной защиты.</p>
+
+    </div>
+
+    <h2>{{ predicted_class }}</h2>
+    <div class="image-examples">
+        <img src="{{ url_for('static', filename='example_images/paslen_slad/1.jpg') }}" alt="Example 1">
+        <img src="{{ url_for('static', filename='example_images/paslen_slad/2.jpg') }}" alt="Example 1">
+        <img src="{{ url_for('static', filename='example_images/paslen_slad/3.jpg') }}" alt="Example 1">
+        <img src="{{ url_for('static', filename='example_images/paslen_slad/4.jpg') }}" alt="Example 1">
+        <img src="{{ url_for('static', filename='example_images/paslen_slad/5.jfif') }}" alt="Example 1">
+        <img src="{{ url_for('static', filename='example_images/paslen_slad/6.png') }}" alt="Example 1">
+    </div>
+{% endblock %}

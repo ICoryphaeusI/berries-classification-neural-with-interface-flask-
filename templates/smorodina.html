@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ predicted_class }}{% endblock %}
+
+{% block content %}
+    <h1>{{ predicted_class }}</h1>
+    <div class="plant-description">
+
+        <h3>Распространение и места обитания</h3>
+        <p>Дикая смородина, также известная как репис, произрастает на равнинах Европейской России, в регионах Кавказа и Восточной Сибири.</p>
+
+        <h3>Особенности кустарника</h3>
+        <p>Это кустарник с обычными листьями. Цветки, составляющие кисти, превращаются в круглые ягоды с плотной кожицей. Окраска плодов может варьироваться от бледно-желтого до черного.</p>
+
+        <h3>Созревание плодов</h3>
+        <p>Плоды дикой смородины созревают в начале июня, предоставляя ценный урожай для использования в пищу и лечебных целях.</p>
+
+        <h3>Полезные свойства и использование</h3>
+        <p>Ягоды реписа богаты витаминами A и C. Их употребление полезно при лечении инфекционных и простудных заболеваний, а также помогает в борьбе с болезнями кровеносной системы и желудочно-кишечного тракта.</p>
+
+    </div>
+
+    <h2>{{ predicted_class }}</h2>
+    <div class="image-examples">
+        <img src="{{ url_for('static', filename='example_images/smorodina/1.jpeg') }}" alt="Example 1">
+        <img src="{{ url_for('static', filename='example_images/smorodina/2.jpg') }}" alt="Example 2">
+        <img src="{{ url_for('static', filename='example_images/smorodina/3.jpg') }}" alt="Example 3">
+        <img src="{{ url_for('static', filename='example_images/smorodina/4.jpg') }}" alt="Example 4">
+        <img src="{{ url_for('static', filename='example_images/smorodina/5.jpg') }}" alt="Example 5">
+        <img src="{{ url_for('static', filename='example_images/smorodina/6.jpg') }}" alt="Example 6">
+    </div>
+{% endblock %}

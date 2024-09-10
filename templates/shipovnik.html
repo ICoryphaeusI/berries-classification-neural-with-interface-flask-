@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ predicted_class }}{% endblock %}
+
+{% block content %}
+    <h1>{{ predicted_class }}</h1>
+    <div class="plant-description">
+
+        <h3>Распространение и места обитания</h3>
+        <p>Шиповник произрастает на всей территории России в различных природных условиях, включая леса, овраги и поля.</p>
+
+        <h3>Особенности листьев и шипов</h3>
+        <p>Листья шиповника состоят из 5-7 овальных листочков, а на ветках находятся острые шипы, придающие растению характерный вид.</p>
+
+        <h3>Цветение и цветы</h3>
+        <p>Цветки шиповника имеют розовый цвет и крупные размеры. Они могут быть расположены как поодиночке, так и собраны в соцветия по три.</p>
+
+        <h3>Полезные свойства и использование</h3>
+        <p>Плоды шиповника богаты витамином C, что делает их ценным источником питательных веществ. Шиповник часто используется в приготовлении народных средств и косметических продуктов благодаря своим полезным свойствам.</p>
+
+    </div>
+
+    <h2>{{ predicted_class }}</h2>
+    <div class="image-examples">
+        <img src="{{ url_for('static', filename='example_images/shipovnik/1.jpg') }}" alt="Example 1">
+        <img src="{{ url_for('static', filename='example_images/shipovnik/2.jpg') }}" alt="Example 2">
+        <img src="{{ url_for('static', filename='example_images/shipovnik/3.jpg') }}" alt="Example 3">
+        <img src="{{ url_for('static', filename='example_images/shipovnik/4.jpeg') }}" alt="Example 4">
+        <img src="{{ url_for('static', filename='example_images/shipovnik/5.jpg') }}" alt="Example 5">
+        <img src="{{ url_for('static', filename='example_images/shipovnik/6.png') }}" alt="Example 6">
+    </div>
+{% endblock %}
